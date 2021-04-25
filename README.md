@@ -5,6 +5,6 @@ A log parser system that deals concurrently with large network log information w
 
 * "Log Line" is composed by n "Log fields", that can be of type expression or not.
 
-* A LogLineParser have several element parsers that will be interchanged during the parsing according to how is mapped the output line.
+* A LogLineParser has several element parsers that will be interchanged during the parsing according to how is mapped the output line.
 
 * Design Patterns -> Strategy, Builder and Abstract Factory
