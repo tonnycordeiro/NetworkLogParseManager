@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NetworkLogParseManager": {
+      "commandName": "Project",
+      "commandLineArgs": "https://public-file/input-01.txt ./output/parsed-log.txt"
+    }
+  }
+}

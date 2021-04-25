@@ -1,0 +1,101 @@
+{
+  "ParsingMapList": [
+    {
+      "SourceField": null,
+      "TargetField": {
+        "Index": 0,
+        "Id": "provider"
+      },
+      "Parser": {
+        "$type": "NetworkLogParseManager.Parsers.ElementParsers.PrintElementLogParser, NetworkLogParseManager",
+        "Value": "MINHA CDN"
+      }
+    },
+    {
+      "SourceField": {
+        "Index": 3,
+        "Id": "http-request"
+      },
+      "TargetField": {
+        "Index": 1,
+        "Id": "http-method"
+      },
+      "Parser": {
+        "$type": "NetworkLogParseManager.Parsers.ElementParsers.SplitElementLogParser, NetworkLogParseManager",
+        "Separator": " ",
+        "Index": 0
+      }
+    },
+    {
+      "SourceField": {
+        "Index": 1,
+        "Id": "status-code"
+      },
+      "TargetField": {
+        "Index": 2,
+        "Id": "status-code"
+      },
+      "Parser": {
+        "$type": "NetworkLogParseManager.Parsers.ElementParsers.CloneElementLogParser, NetworkLogParseManager"
+      }
+    },
+    {
+      "SourceField": {
+        "Index": 3,
+        "Id": "http-request"
+      },
+      "TargetField": {
+        "Index": 3,
+        "Id": "uri-path"
+      },
+      "Parser": {
+        "$type": "NetworkLogParseManager.Parsers.ElementParsers.SplitElementLogParser, NetworkLogParseManager",
+        "Separator": " ",
+        "Index": 1
+      }
+    },
+    {
+      "SourceField": {
+        "Index": 4,
+        "Id": "time-taken"
+      },
+      "TargetField": {
+        "Index": 4,
+        "Id": "time-taken"
+      },
+      "Parser": {
+        "$type": "NetworkLogParseManager.Parsers.ElementParsers.RoundElementLogParser, NetworkLogParseManager",
+        "Digits": 0
+      }
+    },
+    {
+      "SourceField": {
+        "Index": 0,
+        "Id": "response-size"
+      },
+      "TargetField": {
+        "Index": 5,
+        "Id": "response-size"
+      },
+      "Parser": {
+        "$type": "NetworkLogParseManager.Parsers.ElementParsers.CloneElementLogParser, NetworkLogParseManager"
+      }
+    },
+    {
+      "SourceField": {
+        "Index": 2,
+        "Id": "cache-status"
+      },
+      "TargetField": {
+        "Index": 6,
+        "Id": "cache-status"
+      },
+      "Parser": {
+        "$type": "NetworkLogParseManager.Parsers.ElementParsers.MapOrCloneElementLogParser, NetworkLogParseManager",
+        "MapElements": {
+          "INVALIDATE": "REFRESH_HIT"
+        }
+      }
+    }
+  ]
+}

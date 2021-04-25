@@ -1,0 +1,7 @@
+{
+  "Separator": "|",
+  "ExpressionStructure": {
+    "Delimiter": "\"",
+    "SeparatorPattern": "\\s"
+  }
+}
