@@ -11,10 +11,10 @@ namespace NetworkLogParseManager.Builders
     public class LogLineBuilder : ILogLineBuilder
     {
         private List<string> _fieldList;
-        private LogLine _logLine;
+        private ILogLine _logLine;
         private ILogFieldBuilder _logFieldBuilder;
 
-        public LogLineBuilder(LogLine logLine)
+        public LogLineBuilder(ILogLine logLine)
         {
             _fieldList = new List<string>();
             _logLine = logLine;
@@ -25,7 +25,7 @@ namespace NetworkLogParseManager.Builders
                 _logFieldBuilder = null;
         }
 
-        public LogLine LogLine { get => _logLine; set => _logLine = value; }
+        public ILogLine LogLine { get => _logLine; set => _logLine = value; }
 
         #region PRIVATE METHODS
         private static string[] RecoverExpressions(Dictionary<string, string> expressionsWithSeparators, string[] rowValues)

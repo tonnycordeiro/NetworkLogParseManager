@@ -26,6 +26,7 @@ namespace NetworkLogParseManager.Factories
             return logLineParser;
         }
 
-        public abstract LogParsingManager CreateLogParsingManager(string sourceUrlFileName, string targetLocalFilePath, string parsingMapJsonFileName);
+        public abstract LogParsingManager CreateLogParsingManager(string sourceUrlFileName, string targetLocalFilePath, 
+                                                        AbstractLogFactory formatIn01Factory, AbstractLogFactory formatOut01Factory, string parsingMapJsonFileName);
     }
 }

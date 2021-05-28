@@ -10,8 +10,8 @@ namespace NetworkLogParseManager.Factories
 {
     public interface AbstractLogFactory
     {
-        StreamFileReader CreateStreamFileReader(string path);
-        StreamFileWriter CreateStreamFileWriter(string path);
-        LogLine CreateLogLine();
+        IStreamFileReader CreateStreamFileReader(string path);
+        IStreamFileWriter CreateStreamFileWriter(string path);
+        ILogLine CreateLogLine();
     }
 }

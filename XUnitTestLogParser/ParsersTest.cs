@@ -208,10 +208,10 @@ namespace XUnitTestLogParser
                 factory.CreateLogLineParser(It.IsAny<string>(), It.IsAny<AbstractLogFactory>(), It.IsAny<AbstractLogFactory>()))
                 .Returns(logLineParser);
             mockParserFactory.Setup(factory =>
-                factory.CreateLogParsingManager(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
+                factory.CreateLogParsingManager(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<AbstractLogFactory>(), It.IsAny<AbstractLogFactory>(), It.IsAny<string>()))
                 .Returns(new LogParsingManager(mockReader.Object, mockWriter.Object, logLineParser, 10, 10));
 
-            LogParsingManager logParsingManager = mockParserFactory.Object.CreateLogParsingManager(String.Empty, String.Empty, String.Empty);
+            LogParsingManager logParsingManager = mockParserFactory.Object.CreateLogParsingManager(String.Empty, String.Empty, null, null, String.Empty);
             logParsingManager.Parse();
 
             Assert.Equal(expectedStringBuilder.ToString(), actualStringBuilder.ToString());

@@ -18,18 +18,18 @@ namespace NetworkLogParseManager.Factories
         {
         }
 
-        public LogLine CreateLogLine()
+        public ILogLine CreateLogLine()
         {
             string jsonString = File.ReadAllText(LOG_LINE_JSON_PATH);
             return JsonConvert.DeserializeObject<LogLine>(jsonString);
         }
 
-        public StreamFileReader CreateStreamFileReader(string path)
+        public IStreamFileReader CreateStreamFileReader(string path)
         {
             return new StreamUrlFileReader(path);
         }
 
-        public StreamFileWriter CreateStreamFileWriter(string path)
+        public IStreamFileWriter CreateStreamFileWriter(string path)
         {
             throw new NotImplementedException();
         }

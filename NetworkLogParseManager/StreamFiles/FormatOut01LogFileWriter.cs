@@ -12,9 +12,9 @@ namespace NetworkLogParseManager.StreamFiles
         private const string VERSION_HEADER_VALUE = "1.0";
         private const string FIELDS_ID_SEPARATOR = " ";
 
-        LogLine _logLine;
+        ILogLine _logLine;
 
-        public FormatOut01LogFileWriter(string fileName, LogLine logLine) : base(fileName)
+        public FormatOut01LogFileWriter(string fileName, ILogLine logLine) : base(fileName)
         {
             _logLine = logLine;
         }

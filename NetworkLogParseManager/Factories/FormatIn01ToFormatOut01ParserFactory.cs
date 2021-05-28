@@ -22,22 +22,22 @@ namespace NetworkLogParseManager.Factories
         {
         }
 
-        public override LogParsingManager CreateLogParsingManager(string sourceUrlFileName, string targetLocalFilePath, string parsingMapJsonFileName = PARSING_MAP_JSON_PATH)
+        public override LogParsingManager CreateLogParsingManager(string sourceUrlFileName, string targetLocalFilePath, 
+            AbstractLogFactory formatIn01Factory, AbstractLogFactory formatOut01Factory, string parsingMapJsonFileName = PARSING_MAP_JSON_PATH)
         {
             LogParsingManager logParsingManager;
-            FormatIn01LogFactory formatIn01Factory = new FormatIn01LogFactory();
-            FormatOut01LogFactory formatOut01Factory = new FormatOut01LogFactory();
             ConfigProvider cfgProvider = new ConfigProvider();
 
             try
             {
                 LogLineParser logLineParser = CreateLogLineParser(parsingMapJsonFileName, formatIn01Factory, formatOut01Factory);
 
-                StreamUrlFileReader streamUrlFileReader = new StreamUrlFileReader(sourceUrlFileName);
-                FormatOut01LogFileWriter formatOut01LogFileWriter = new FormatOut01LogFileWriter(targetLocalFilePath, logLineParser.TargetLogLine);
+                IStreamFileReader streamFileReader = formatIn01Factory.CreateStreamFileReader(sourceUrlFileName);
+                IStreamFileWriter streamFileWriter =
+                    formatOut01Factory.CreateStreamFileWriter(targetLocalFilePath);
 
-                logParsingManager = new LogParsingManager(streamUrlFileReader,
-                                                            formatOut01LogFileWriter,
+                logParsingManager = new LogParsingManager(streamFileReader,
+                                                            streamFileWriter,
                                                             logLineParser,
                                                             cfgProvider.ThresholdQueueToParse,
                                                             cfgProvider.ThresholdQueueToWrite);

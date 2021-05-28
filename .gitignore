@@ -3,3 +3,12 @@
 ################################################################################
 
 /.vs/VSWorkspaceState.json
+/.vs/slnx.sqlite
+/.vs/NetworkLogParseManager/v16/.suo
+/.vs/NetworkLogParseManager/v16
+/.vs/NetworkLogParseManager/DesignTimeBuild/.dtbcache.v2
+/.vs/NetworkLogParseManager/DesignTimeBuild
+/.vs/NetworkLogParseManager
+/.vs
+/NetworkLogParseManager/obj
+/XUnitTestLogParser/obj

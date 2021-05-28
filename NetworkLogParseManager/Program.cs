@@ -21,7 +21,7 @@ namespace NetworkLogParseManager
 
             try
             {
-                LogParsingManager logParsingManager = parserFactory.CreateLogParsingManager(args[0], args[1]);
+                LogParsingManager logParsingManager = parserFactory.CreateLogParsingManager(args[0], args[1], new FormatIn01LogFactory(), new FormatOut01LogFactory());
                 logParsingManager.Parse();
             }
             catch(Exception ex)

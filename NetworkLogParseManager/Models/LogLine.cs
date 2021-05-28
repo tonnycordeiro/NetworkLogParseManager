@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetworkLogParseManager.Models
 {
-    public class LogLine
+    public class LogLine : ILogLine
     {
         private LogField[] _logFieldArray;
         private char _separator;

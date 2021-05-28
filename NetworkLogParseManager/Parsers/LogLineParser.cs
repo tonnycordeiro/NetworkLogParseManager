@@ -15,8 +15,8 @@ namespace NetworkLogParseManager.Parsers
         ILogLineBuilder _targetLogLineBuilder;
         
         List<ParsingMap> _parsingMapList;
-        LogLine _sourceLogLine;
-        LogLine _targetLogLine;
+        ILogLine _sourceLogLine;
+        ILogLine _targetLogLine;
 
         [JsonConstructor]
         public LogLineParser(List<ParsingMap> parsingMapList)
@@ -65,10 +65,10 @@ namespace NetworkLogParseManager.Parsers
         protected ILogLineBuilder SourceLogLineBuilder { get => _sourceLogLineBuilder; }
         public ILogLineBuilder TargetLogLineBuilder { get => _targetLogLineBuilder; }
         public List<ParsingMap> ParsingMapList { get => _parsingMapList; set => _parsingMapList = value; }
-        public LogLine SourceLogLine { get => _sourceLogLine; 
+        public ILogLine SourceLogLine { get => _sourceLogLine; 
                                        set { _sourceLogLine = value; _sourceLogLineBuilder = new LogLineBuilder(value); } 
                                      }
-        public LogLine TargetLogLine { get => _targetLogLine; 
+        public ILogLine TargetLogLine { get => _targetLogLine; 
                                        set { _targetLogLine = value; _targetLogLineBuilder = new LogLineBuilder(value); }
                                      }
 

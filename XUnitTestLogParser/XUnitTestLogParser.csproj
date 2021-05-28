@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DynamicNetworkLogParser\NetworkLogParseManager.csproj" />
+    <ProjectReference Include="..\NetworkLogParseManager\NetworkLogParseManager.csproj" />
   </ItemGroup>
 
 </Project>
